@@ -1,4 +1,4 @@
 main(List<String> arguments) {
-  var someVar = "foo";
+  String someVar = "foo";
   print(someVar);
 }
