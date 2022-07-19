@@ -20,6 +20,11 @@ class ScaffoldExample extends StatelessWidget {
             IconButton(icon: Icon(Icons.access_alarm), onPressed: _tapButton)
           ],
         ),
+        bottomNavigationBar: BottomNavigationBar(items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), label: "BDS"),
+          BottomNavigationBarItem(icon: Icon(Icons.abc), label: "ABC"),
+        ], onTap: (int index) => {debugPrint("hi $index")}),
         backgroundColor: Colors.redAccent.shade100,
         body: Container(
             alignment: Alignment.center,
