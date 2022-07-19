@@ -28,8 +28,26 @@ class ScaffoldExample extends StatelessWidget {
                 children: <Widget>[
                   InkWell(
                       child: Text("tap me", style: TextStyle(fontSize: 23.4)),
-                      onTap: () => debugPrint("yo dawg"))
+                      onTap: () => debugPrint("yo dawg")),
+                  CustomButton()
                 ])));
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: () {
+          final snackbar = SnackBar(content: Text("Sup dawg"));
+          Scaffold.of(context).showSnackBar(snackbar);
+        },
+        child: Container(
+            padding: EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+                color: Colors.pinkAccent,
+                borderRadius: BorderRadius.circular(8.0)),
+            child: Text("blah")));
   }
 }
 
