@@ -9,17 +9,27 @@ class ScaffoldExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-      title: Text("Scaffold"),
-      centerTitle: true,
-      backgroundColor: Colors.amberAccent.shade700,
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.email),
-          onPressed: () => debugPrint("Email"),
+          title: Text("Scaffold"),
+          centerTitle: true,
+          backgroundColor: Colors.amberAccent.shade700,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.email),
+              onPressed: () => debugPrint("Email"),
+            ),
+            IconButton(icon: Icon(Icons.access_alarm), onPressed: _tapButton)
+          ],
         ),
-        IconButton(icon: Icon(Icons.access_alarm), onPressed: _tapButton)
-      ],
-    ));
+        backgroundColor: Colors.redAccent.shade100,
+        body: Container(
+            alignment: Alignment.center,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                      child: Text("tap me", style: TextStyle(fontSize: 23.4)),
+                      onTap: () => debugPrint("yo dawg"))
+                ])));
   }
 }
 
